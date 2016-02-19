@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AOD Map</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <style type="text/css">
+        #map {
+            height: 450px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([45.480797, -122.630091], 15);
+        // setView method call returns the map object (which allows
+        // for convenient jQuery-like method chaining)
+        // all mouse and touch interactions are enabled
+        // zoom and attribution controls on
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+         }).addTo(map);
+    </script>
+    
+</body>
+
+</html>
